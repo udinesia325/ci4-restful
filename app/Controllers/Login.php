@@ -38,6 +38,8 @@ class Login extends ResourceController
 			"role" => $result[0]["role"],
 		];
 		session()->set("token", $data["token"]);
+
+		session()->set("role", $data["role"]);
 		return $this->respond($data, 200);
 	}
 	public function logout()

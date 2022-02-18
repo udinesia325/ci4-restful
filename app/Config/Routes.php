@@ -32,10 +32,28 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->post('v1/auth/login', 'Login::login');
-
 $routes->get('v1/auth/logout', 'Login::logout');
 
+// untuk places 
+
+$routes->get("v1/place","Place::index");
+$routes->get("v1/place/(:num)","Place::index/$1");
+$routes->post("v1/place","Place::create");
+$routes->post("v1/place/(:num)","Place::edit/$1");
+$routes->delete("v1/place/(:num)","Place::delete/$1");
+
+
+// untuk schedule
+$routes->post("v1/schedule","Schedule::create");
+$routes->delete("v1/schedule/(:num)","Schedule::delete/$1");
+
+//untuk search
+
+$routes->get("v1/route/search/(:num)/(:num)","Route::search/$1/$2");
+$routes->get("v1/route/search/(:num)/(:num)/(:any)","Route::search/$1/$2/$3");
+$routes->post("v1/route/selection","Route::selection");
 /*
+ *
  * --------------------------------------------------------------------
  * Additional Routing
  * --------------------------------------------------------------------
