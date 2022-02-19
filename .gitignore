@@ -149,4 +149,6 @@ tags
 # Persistent undo
 [._]*.un~
 
+public/img/*
+
 # End of https://www.toptal.com/developers/gitignore/api/vim
