@@ -55,4 +55,8 @@ class Login extends ResourceController
 	{
 		return $this->respond(["message" => $msg], $code);
 	}
+	public function tes()
+	 {
+	    return var_dump( $this->request->getPost() );
+	 }
 }
